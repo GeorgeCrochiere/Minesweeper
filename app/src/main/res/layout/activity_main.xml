@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_layout"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/titleBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Welcome to Minesweeper!"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/subtitleBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Choose your settings!"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/input_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/subtitleBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/label_rows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/input_region"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Number of Rows:"
+                android:textSize="20dp"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/edit_rows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_rows"
+                app:layout_constraintLeft_toRightOf="@id/label_rows"
+                android:ems="5"
+                android:layout_marginLeft="60dp"
+                android:inputType="number"
+                />
+
+            <TextView
+                android:id="@+id/label_columns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/label_rows"
+                app:layout_constraintLeft_toLeftOf="@id/label_rows"
+                android:text="Number of Columns:"
+                android:textSize="20dp"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/edit_columns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_columns"
+                app:layout_constraintLeft_toLeftOf="@id/edit_rows"
+                android:ems="5"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/label_mines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/edit_columns"
+                app:layout_constraintLeft_toLeftOf="@id/label_rows"
+                android:text="Number of Mines:"
+                android:textSize="20dp"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/edit_mines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@id/label_mines"
+                app:layout_constraintLeft_toLeftOf="@id/edit_rows"
+                android:ems="5"
+                android:inputType="number"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/input_region"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="32dp"
+            android:text="Play!"
+            android:textSize="24dp"
+            />
+
+        <TextView
+            android:id="@+id/errorBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/submit_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="16dp"
+            android:layout_marginTop="32dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
